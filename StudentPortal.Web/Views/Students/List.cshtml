@@ -1,0 +1,28 @@
+﻿@using StudentPortal.Web.Models.Entities
+@model List<StudentPortal.Web.Models.Entities.Student>
+
+<h1>Students</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.Phone</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
